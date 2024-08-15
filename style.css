@@ -64,4 +64,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
+.clear{
+    padding: 1px 10px;
+    cursor: pointer;
+}
