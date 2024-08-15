@@ -34,6 +34,7 @@ function createTask(textoInput){  //funcao para cliar a lista de tarefas
     task.appendChild(li);
     clearInput();
     createBtnClean(li);
+    saveTask();
 };
 
 btnNewTask.addEventListener('click', function(e) {
@@ -49,3 +50,14 @@ document.addEventListener('click', function(e) {
     }
 
 });
+
+function saveTask() {
+    const liTasks = task.querySelectorAll('li');
+    const listTasks = [];
+
+    for (let task of liTasks) {
+        let taskText = task.innerText;
+        taskText = taskText.replace('Apagar', '').trim();
+        listTasks.push(taskText);
+    }
+};
