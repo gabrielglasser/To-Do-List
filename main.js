@@ -42,17 +42,18 @@ btnNewTask.addEventListener('click', function(e) {
     createTask(newTask.value);
 });
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function(e) {  //botao apagar
     const el = e.target;
 
     if (el.classList.contains('clear')) {
         el.parentElement.remove();
+        saveTask();
     }
 
 });
 
 function saveTask() {
-    const liTasks = task.querySelectorAll('li');
+    const liTasks = document.querySelectorAll('li'); // Usei document.querySelectorAll para garantir que todas as <li> sejam selecionadas
     const listTasks = [];
 
     for (let task of liTasks) {
@@ -60,4 +61,21 @@ function saveTask() {
         taskText = taskText.replace('Apagar', '').trim();
         listTasks.push(taskText);
     }
-};
+
+    const tasksJSON = JSON.stringify(listTasks); // Transformando em string JSON
+    localStorage.setItem('task', tasksJSON); // Usando a chave correta "task"
+}
+
+function newTaskSave() {
+    const task = localStorage.getItem('task'); // Usando a chave correta "task"
+
+    if (task) { 
+        const listTasks = JSON.parse(task); // Transformando para um objeto JS
+
+        for (let task of listTasks) {
+            newTask(task); // Função para adicionar a tarefa na interface 
+        }
+    }
+}
+
+newTaskSave();
