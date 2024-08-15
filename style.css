@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: dimgrey;
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 80vh;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 30px;
+    padding: 20px;
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+}
+
+.container > h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.container > p {
+    text-align: center;
+}
+
+.newTask, .btnNewTask {
+    margin: 10px;
+}
+
+.newTask {
+    padding: 5px 60px;
+    border-radius: 12px;
+}
+
+.btnNewTask {
+    padding: 5px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.tasks {
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 20px;
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
